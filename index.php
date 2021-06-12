@@ -38,7 +38,7 @@
         }
     }
 
-    // require_once('ressources/inc/header.php');
+    require_once('ressources/inc/header.php');
 
     $controller = new $controller();
     $controller->$action($arg);
