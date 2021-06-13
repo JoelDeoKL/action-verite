@@ -4,7 +4,7 @@
             <div style="text-align:center">
                 <h1>Bienvenue dans <strong><em>Action ou Vérité</em></strong></h1>
                 <br>
-                <a href="" class="btn btn-primary">Commencer</a>
+                <a href="index.php?kay=x-game.choix" class="btn btn-primary">Commencer</a>
             </div>
         </div>
     </div>

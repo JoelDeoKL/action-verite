@@ -4,8 +4,8 @@
             <div style="text-align:center">
                 <h1>Faites votre choix</h1>
                 <br>
-                <a href="" class="btn btn-primary">Action</a>
-                <a href="" class="btn btn-primary">Vérité</a>
+                <a href="index.php?kay=x-game.action" class="btn btn-primary">Action</a>
+                <a href="index.php?kay=x-game.verite" class="btn btn-success">Vérité</a>
             </div>
         </div>
     </div>
