@@ -1,6 +1,6 @@
 <?php
-    require_once('config/config.php');
-    require_once("models/x_models/Connexion.php");
+    //require_once('config/config.php');
+    //require_once("models/x_models/Connexion.php");
     // //require_once('config/tm_helpers.php');
     require_once('controllers/AutoloadController.php');
 
@@ -13,8 +13,8 @@
     $viewPath = "";
     $arg = ""; //represente l'argument
 
-    if(isset($_GET['y']) && !empty($_GET['y'])){
-        $getUrl = explode('-', $_GET['y']);
+    if(isset($_GET['kay']) && !empty($_GET['kay'])){
+        $getUrl = explode('-', $_GET['kay']);
         if(($getUrl[0] == "x")  && isset($getUrl[1])){
             /**
              * [0]: controller
@@ -43,5 +43,5 @@
     $controller = new $controller();
     $controller->$action($arg);
 ?>
- 
-<?php //require_once('ressources/inc/footer.php'); ?>
+
+<?php require_once('ressources/inc/footer.php'); ?>
