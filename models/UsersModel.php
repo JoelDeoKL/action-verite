@@ -11,6 +11,14 @@ class UsersModel extends MainModel{
 
         $sql->execute([$users->getEmail()]);
 
+        while($data = $sql->fetch()){
+            if(isset($data["email"]) && isset($data["pseudo"])){
+                var_dump($data["pseudo"]. " " . $data["email"] . " " . $data["mdp"]);
+                die();
+            }else{
+                var_dump("NON");die();
+            }
+        }
 
     }
     public function inscription(){

@@ -13,12 +13,16 @@ class UsersController extends x_Controller{
         }
         $this->load->view("inscription");
     }
+
     public function inscrire(){
         $pseudo = $_POST["pseudo"];
         $email = $_POST["email"];
         $mdp = password_hash($_POST["mdp"], PASSWORD_BCRYPT);
 
+        $users = new User(null, $pseudo, $email, $mdp);
+
         if($_POST["mdp"] == $_POST["confirm"]){
+
             var_dump($pseudo. " " . $email . " " . $mdp);
             die();
         }
