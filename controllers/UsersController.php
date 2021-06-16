@@ -1,5 +1,6 @@
 <?php
 
+require_once("entities/Users.php")
 
 class UsersController extends x_Controller{
 
@@ -19,13 +20,19 @@ class UsersController extends x_Controller{
         $email = $_POST["email"];
         $mdp = password_hash($_POST["mdp"], PASSWORD_BCRYPT);
 
-        $users = new User(null, $pseudo, $email, $mdp);
+        $users = new Users(null, $pseudo, $email, $mdp);
+        $connexion = new UsersModel();
 
         if($_POST["mdp"] == $_POST["confirm"]){
-
-            var_dump($pseudo. " " . $email . " " . $mdp);
+            if($connexion->check($users){
+                $connexion->inscription();
+            }else{
+                var_dump("NON");
+                die();
+            }
+        }else{
+            var_dump("NAH");
             die();
         }
-
     }
 }

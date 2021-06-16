@@ -13,16 +13,23 @@ class UsersModel extends MainModel{
 
         while($data = $sql->fetch()){
             if(isset($data["email"]) && isset($data["pseudo"])){
-                var_dump($data["pseudo"]. " " . $data["email"] . " " . $data["mdp"]);
-                die();
+                return false;
             }else{
-                var_dump("NON");die();
+                return true;
             }
         }
 
     }
-    public function inscription(){
+    public function inscription(Users $users){
+        $query = "INSERT INTO users SET pseudo=?, email=?, mdp=?";
+        $sql = self::pdo()->prepare($query);
 
+        if($sql->execute([$users->getPseudo, $users->getEmail, $users->mdp])){
+            session_start();
+            $_SESSION["nom"] = $users->getPseudo;
+            header("Location : index.php?kay=x-game.compte");
+        }
+        return false;
     }
 
 }
