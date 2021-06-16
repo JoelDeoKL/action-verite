@@ -8,6 +8,6 @@ class UsersController extends x_Controller{
     }
 
     public function inscription(){
-        var_dump("OK");
+        $this->load->view("inscription");
     }
 }
