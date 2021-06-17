@@ -23,7 +23,7 @@ class Users {
     }
 
     public function getPseudo(){
-        return this->pseudo;
+        return $this->pseudo;
     }
 
     public function setPseudo($pseudo){
@@ -31,7 +31,7 @@ class Users {
     }
 
     public function getEmail(){
-        return this->email;
+        return $this->email;
     }
 
     public function setEmail($email){
@@ -39,7 +39,7 @@ class Users {
     }
 
     public function getMdp(){
-        return this->mdp;
+        return $this->mdp;
     }
 
     public function setMdp($mdp){
