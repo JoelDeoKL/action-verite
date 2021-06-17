@@ -1,6 +1,6 @@
 <?php
 
-require_once("entites/Users.php");
+require_once("entities/Users.php");
 require_once("x_models/MainModel.php");
 
 class UsersModel extends MainModel{

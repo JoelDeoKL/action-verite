@@ -1,6 +1,7 @@
 <?php
 
 require_once("entities/Users.php");
+require_once("models/UsersModel.php");
 
 class UsersController extends x_Controller{
 
@@ -24,6 +25,7 @@ class UsersController extends x_Controller{
         $connexion = new UsersModel();
 
         if($_POST["mdp"] == $_POST["confirm"]){
+            var_dump($pseudo);die();
             if($connexion->check($users)){
                 $connexion->inscription();
             }else{
