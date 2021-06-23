@@ -4,6 +4,11 @@ require_once("models/x_models/MainModel.php");
 
 Class GameController extends x_Controller{
 
+    public function compte(){
+
+        $this->load->view("compte");
+    }
+
     public function choix(){
         $this->load->view("choix");
     }

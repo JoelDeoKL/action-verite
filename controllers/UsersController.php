@@ -5,10 +5,6 @@ require_once("models/UsersModel.php");
 
 class UsersController extends x_Controller{
 
-    public function compte(){
-        $this->load->view("compte");
-    }
-
     public function inscription(){
         if(isset($_POST["inscrire"])){
             $this->inscrire();
