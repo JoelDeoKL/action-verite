@@ -6,7 +6,7 @@ require_once("models/UsersModel.php");
 class UsersController extends x_Controller{
 
     public function compte(){
-        echo "OH";
+        $this->load->view("compte");
     }
 
     public function inscription(){
@@ -25,7 +25,6 @@ class UsersController extends x_Controller{
         $connexion = new UsersModel();
 
         if($_POST["mdp"] == $_POST["confirm"]){
-            var_dump($pseudo);die();
             if($connexion->check($users)){
                 $connexion->inscription();
             }else{

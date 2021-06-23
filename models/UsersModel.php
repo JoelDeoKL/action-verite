@@ -13,6 +13,7 @@ class UsersModel extends MainModel{
 
         while($data = $sql->fetch()){
             if(isset($data["email"]) && isset($data["pseudo"])){
+                var_dump($data["pseudo"]);die();
                 return false;
             }else{
                 return true;

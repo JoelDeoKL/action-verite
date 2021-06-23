@@ -12,10 +12,8 @@ class Connexion
                 array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 
             return self::$resource;
-        } else{
+        }else{
             return self::$resource;
         }
     }
-
-
 }

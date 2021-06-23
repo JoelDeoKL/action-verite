@@ -15,5 +15,9 @@ Class GameController extends x_Controller{
     public function verite(){
         echo "goodhe";
     }
-}
 
+    public function ajouter(){
+        echo "ajouter_action";
+    }
+
+}
