@@ -5,7 +5,9 @@ require_once("models/x_models/MainModel.php");
 Class GameController extends x_Controller{
 
     public function compte(){
+        if(isset($_POST["envoyer"])){
 
+        }
         $this->load->view("compte");
     }
 
