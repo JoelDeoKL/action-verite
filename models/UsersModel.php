@@ -34,6 +34,24 @@ class UsersModel extends MainModel{
             header('location: index.php?kay=x-users.compte');
         }
         return false;
+    }
 
+    public function connexion(){
+        $this->load->model("UsersModel");
+        $email = $_POST["email"];
+        $psw = $_POST["mdp"];
+
+        $mdp = password_hash($psw, PASSWORD_BCRYPT);
+
+        $users = new Users(null, null, $email, $mdp);
+        $connexion = new UsersModel();
+
+        if($connexion->check($users)){
+            if($connexion->connexion($users)){
+                header('location: index.php?kay=x-users.compte');
+            }
+        }else{
+            header('Location: index.php?kay=x-users.connect');
+        }
     }
 }

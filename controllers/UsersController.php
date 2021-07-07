@@ -46,7 +46,6 @@ class UsersController extends x_Controller{
         $this->load->model("UsersModel");
         $email = $_POST["email"];
         $psw = $_POST["mdp"];
-
         $mdp = password_hash($psw, PASSWORD_BCRYPT);
 
         $users = new Users(null, null, $email, $mdp);
