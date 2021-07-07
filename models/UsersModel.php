@@ -36,22 +36,24 @@ class UsersModel extends MainModel{
         return false;
     }
 
-    public function connexion(){
-        $this->load->model("UsersModel");
-        $email = $_POST["email"];
-        $psw = $_POST["mdp"];
+    public function connexion(Users $users){
+        $query = "SELECT * FROM users WHERE email=?";
+        $sql = self::pdo()->prepare($query);
 
-        $mdp = password_hash($psw, PASSWORD_BCRYPT);
+        $sql->execute([$users->getEmail()]);
 
-        $users = new Users(null, null, $email, $mdp);
-        $connexion = new UsersModel();
+        $data = $sql->fetch();
 
-        if($connexion->check($users)){
-            if($connexion->connexion($users)){
-                header('location: index.php?kay=x-users.compte');
-            }
+        $pasw = $users->getMdp();
+        $pass = $data['mdp'];
+
+        //if(password_verify($pasw, $pass)){
+        if(isset($data["mdp"])){
+            session_start();
+            $_SESSION['nom'] = $data['pseudo'];
+            return true;
         }else{
-            header('Location: index.php?kay=x-users.connect');
+            return false;
         }
     }
 }

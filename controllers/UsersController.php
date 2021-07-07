@@ -53,7 +53,7 @@ class UsersController extends x_Controller{
 
         if($connexion->check($users)){
             if($connexion->connexion($users)){
-                header('location: index.php?kay=x-users.compte');
+                header('location: index.php?kay=x-game.compte');
             }
         }else{
             header('Location: index.php?kay=x-users.connect');
