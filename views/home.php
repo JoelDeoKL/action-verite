@@ -9,3 +9,11 @@
         </div>
     </div>
 </div>
+
+    <table>
+        <?php
+        for($i=1; $i<=10; $i++){
+            echo"<th><?=$i?></th>";
+        }
+        ?>
+    <table>
