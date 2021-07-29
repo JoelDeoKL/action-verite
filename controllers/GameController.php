@@ -7,12 +7,15 @@ require_once("models/x_models/MainModel.php");
 Class GameController extends x_Controller{
 
     public function compte(){
+        if(isset($_POST["envoyer"])){
+            $this->ajouter();
+        }
         $pseudo = $_SESSION["nom"];
-        $questions = new Questions(null, null, null, $pseudo);
+        $questions = new Questions(null, null, null, $pseudo, null);
         $data = new QuestionsModel();
 
         $donnees = $data->afficher($questions);
-        $this->load->view("compte", compact("questions");
+        $this->load->view("compte", compact("questions"));
     }
 
     public function choix(){
